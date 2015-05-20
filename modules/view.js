@@ -1,7 +1,7 @@
 define(['modules/ajax'], function (ajax) {
   'use strict';
 
-  var urlPrefix = '/resources/js/',
+  var urlPrefix = '',
       htmlElement,
       onLoad = function (domElement) { };
 

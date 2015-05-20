@@ -9,7 +9,7 @@ define(['modules/view'], function (view) {
   }
 
   function getRoute() {
-    var s = window.location.pathname.split('/').filter(removeEmpty);
+    var s = window.location.pathname.substring(window.location.pathname.indexOf(index)).split('/').filter(removeEmpty);
     if (s[0].indexOf(index) >= 0) s.shift();
     return s.join('/');
   }
@@ -29,7 +29,7 @@ define(['modules/view'], function (view) {
     var route = getRoute();
     var m = findModule(route);
     if (null === m)
-      console.error('route not found.');
+      console.error('route not found: ' + route);
     else
       m(view);
   }
